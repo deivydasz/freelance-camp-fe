@@ -18,21 +18,21 @@ var DocumentsComponent = (function () {
                 description: 'adsfsdg asgsdfg asdgs',
                 file_url: 'http://google.com',
                 updated_at: '9/1/17',
-                image_url: 'http://google.com',
+                image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',
             },
             {
                 title: "My Second Doc",
                 description: 'adsfsdg asgsdfg asdgs',
                 file_url: 'http://google.com',
                 updated_at: '9/1/17',
-                image_url: 'http://google.com',
+                image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',
             },
             {
                 title: "My Last Doc",
                 description: 'adsfsdg asgsdfg asdgs',
                 file_url: 'http://google.com',
                 updated_at: '9/1/17',
-                image_url: 'http://google.com',
+                image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',
             }
         ];
     }
@@ -42,7 +42,8 @@ DocumentsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'documents',
-        templateUrl: 'documents.component.html'
+        templateUrl: 'documents.component.html',
+        styleUrls: ['documents.component.css']
     }),
     __metadata("design:paramtypes", [])
 ], DocumentsComponent);
