@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Proposal } from './proposal'
+import { Proposal } from './proposal';
 
 @Component({
 	moduleId: module.id,
@@ -8,9 +8,9 @@ import { Proposal } from './proposal'
 })
 export class ProposalListComponent {
 	proposalOne: Proposal = new Proposal(15, 'Abc Company', 'http://portfolio.deviz.eu', 
-		'Ruby on Rails', 150, 120, 15, 'deivis@deviz.eu'),
+		'Ruby on Rails', 150, 120, 15, 'deivis@deviz.eu')
 	proposalTwo: Proposal = new Proposal(99, 'XYZ Company', 'http://portfolio.deviz.eu', 
-		'Ruby on Rails', 150, 120, 15, 'deivis@deviz.eu'),
+		'Ruby on Rails', 150, 120, 15, 'deivis@deviz.eu')
 	proposalThree: Proposal = new Proposal(300, 'Something Company', 'http://portfolio.deviz.eu', 
 		'Ruby on Rails', 150, 120, 15, 'deivis@deviz.eu')
 
