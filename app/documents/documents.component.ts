@@ -1,36 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
+import { DocumentService } from './document.service';
 
 @Component({
 	moduleId: module.id,
 	selector: 'documents',
 	templateUrl: 'documents.component.html',
-	styleUrls: ['documents.component.css']
+	styleUrls: ['documents.component.css'],
+	providers: [ DocumentService ]
 })
-export class DocumentsComponent { 
-	pageTitle: string = "Document Dashboard"
-	
-	documents: Document[] = [
-		{
-			title: "My First Doc",
-			description: 'adsfsdg asgsdfg asdgs',
-			file_url: 'http://google.com',
-			updated_at: '9/1/17',
-			image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',	
-		},
-		{
-			title: "My Second Doc",
-			description: 'adsfsdg asgsdfg asdgs',
-			file_url: 'http://google.com',
-			updated_at: '9/1/17',
-			image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',	
-		},
-		{
-			title: "My Last Doc",
-			description: 'adsfsdg asgsdfg asdgs',
-			file_url: 'http://google.com',
-			updated_at: '9/1/17',
-			image_url: 'https://udemy-images.udemy.com/course/750x422/54155_ffa4_6.jpg',	
-		}
-	]
+export class DocumentsComponent implements OnInit { 
+	pageTitle: string = "Document Dashboard"	
+	documents: Document[];
+	errorMessage: string;
+	mode = "Observable";
+
+	constructor(
+		private documentServise: DocumentService,
+	) {}
+
+	ngOnInit() {
+		let timer = Observable.timer(0, 5000);
+		timer.subscribe(() => this.getDocuments());
+	}
+
+	getDocuments() {
+		this.documentServise.getDocuments()
+				.subscribe(
+					documents => this.documents = documents,
+					error => this.errorMessage = <any>error
+				);
+	}
 }
