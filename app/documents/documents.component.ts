@@ -17,7 +17,7 @@ export class DocumentsComponent implements OnInit {
 	mode = "Observable";
 
 	constructor(
-		private documentServise: DocumentService,
+		private documentService: DocumentService,
 	) {}
 
 	ngOnInit() {
@@ -26,7 +26,7 @@ export class DocumentsComponent implements OnInit {
 	}
 
 	getDocuments() {
-		this.documentServise.getDocuments()
+		this.documentService.getDocuments()
 				.subscribe(
 					documents => this.documents = documents,
 					error => this.errorMessage = <any>error

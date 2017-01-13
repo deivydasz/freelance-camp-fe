@@ -12,8 +12,8 @@ var core_1 = require("@angular/core");
 var Rx_1 = require("rxjs/Rx");
 var document_service_1 = require("./document.service");
 var DocumentsComponent = (function () {
-    function DocumentsComponent(documentServise) {
-        this.documentServise = documentServise;
+    function DocumentsComponent(documentService) {
+        this.documentService = documentService;
         this.pageTitle = "Document Dashboard";
         this.mode = "Observable";
     }
@@ -24,7 +24,7 @@ var DocumentsComponent = (function () {
     };
     DocumentsComponent.prototype.getDocuments = function () {
         var _this = this;
-        this.documentServise.getDocuments()
+        this.documentService.getDocuments()
             .subscribe(function (documents) { return _this.documents = documents; }, function (error) { return _this.errorMessage = error; });
     };
     return DocumentsComponent;
