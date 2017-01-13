@@ -14,7 +14,6 @@ import { ProposalShowComponent } from './proposal/proposal-show.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
 @NgModule({
 	imports: [
 		BrowserModule,
